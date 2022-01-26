@@ -11,7 +11,8 @@ const Container = styled.div`
   position: sticky;
   top: 0;
   width: 100%;
-  height: 80p;
+  height: 80px;
+  display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 80px;
@@ -37,6 +38,7 @@ const Container = styled.div`
       background-color: white;
       cursor: pointer;
       outline: none;
+      font-weight: 600;
       &:hover {
         background-color: ${palette.gray_f7};
       }
@@ -84,7 +86,7 @@ const Container = styled.div`
 
 const Header: React.FC = () => {
   //모달을 열고 닫을 boolean값
-  const { openModal, ModalPortal } = useModal();
+  const { openModal, closeModal, ModalPortal } = useModal();
 
   return (
     <Container>
@@ -107,7 +109,7 @@ const Header: React.FC = () => {
         </button>
       </div>
       <ModalPortal>
-        <SignUpModal />
+        <SignUpModal closeModal = {closeModal}/>
       </ModalPortal>
     </Container>
   );
