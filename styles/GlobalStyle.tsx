@@ -8,6 +8,8 @@ const globalStyle = css`
         box-sizing: border-box;
     }
     body{
+        font-family: Noto Sans, Noto Sans KR;
+        line-height: 1.2;
         color: ${palette.black};
     }
 `;
