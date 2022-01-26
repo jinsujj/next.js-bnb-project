@@ -12,6 +12,14 @@ import styled from "styled-components";
 1) React.createPortal(child, container);
 첫번째 인자(child) : 리액트 컴포넌트
 두번째 인자(container) : 실제 엘리먼트에 넣어줄 DOM 위치(id)
+
+
+
+After works.
+모달을 사용하기 위해 부모에 상태 하나를 만들어야 하고 ModalPortal 에
+Props 로 모달을 닫는 함수를 전달하는 일은 번거롭다.
+그래서 커스텀 훅을 만들어 해당 버거로움을 없앤다.
+
 */
 
 const Container = styled.div`
