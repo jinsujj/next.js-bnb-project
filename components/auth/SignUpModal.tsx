@@ -10,8 +10,9 @@ import Input from "../common/input";
 import Selector from "../common/Selector";
 import { dayList, monthList, yearList } from "../../lib/staticData";
 import Button from "../common/Button";
+import { signupAPI } from "../../lib/api/auth";
 
-const Container = styled.div`
+const Container = styled.form`
   width: 568px;
   height: auto;
   padding: 32px;
@@ -124,8 +125,30 @@ const SignUpModal: React.FC<IProps> = ({ closeModal }) => {
     setHidePassword(!hidePassword);
   };
 
+  // 회원가입 폼 제출하기
+  const onSubmitSignup = async(event:React.FormEvent<HTMLFormElement>) =>{
+    event.preventDefault();
+
+    try{
+      const signUpBody = {
+        email,
+        lastname,
+        firstname,
+        password,
+        birthday: new Date(
+          `${birthYear}-${birthMonth!.replace("월", "")}-${birthDay}`
+        ).toISOString(),
+      };
+      
+      await signupAPI(signUpBody);
+    }
+    catch(e){
+      console.log(e);
+    }
+  }
+
   return (
-    <Container>
+    <Container onSubmit={onSubmitSignup}>
       <CloseXIcon className="mordal-close-x-icon" onClick={closeModal} />
       <div className="input-wrapper">
         <Input

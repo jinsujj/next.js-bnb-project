@@ -5,7 +5,7 @@ import { StoredUserType } from "../../types/user";
 
 // 유저 리스트 불러오기
 const getList =() =>{
-    const usersBuffer = readFileSync("data/users/json");
+    const usersBuffer = readFileSync("data/users.json");
     const usersString = usersBuffer.toString();
     if(!usersString){
         return [];
