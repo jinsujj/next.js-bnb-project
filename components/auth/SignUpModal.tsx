@@ -11,6 +11,11 @@ import Selector from "../common/Selector";
 import { dayList, monthList, yearList } from "../../lib/staticData";
 import Button from "../common/Button";
 import { signupAPI } from "../../lib/api/auth";
+import { useDispatch } from "react-redux";
+import { userActions } from "../../store/user";
+import { useSelector } from "../../store";
+import { commonAction } from "../../store/common";
+import useValidateMode from "../../hooks/useValidateMode";
 
 const Container = styled.form`
   width: 568px;
@@ -83,6 +88,9 @@ const SignUpModal: React.FC<IProps> = ({ closeModal }) => {
   const [birthDay, setBirthDay] = useState<string | undefined>();
   const [birthMonth, setBirthMonth] = useState<string | undefined>();
 
+  const dispatch = useDispatch();
+  const {setValiedateMode} = useValidateMode();
+
   // 이메일 주소 변경 시
   const onChangeEmail = (event: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(event.target.value);
@@ -126,8 +134,14 @@ const SignUpModal: React.FC<IProps> = ({ closeModal }) => {
   };
 
   // 회원가입 폼 제출하기
-  const onSubmitSignup = async(event:React.FormEvent<HTMLFormElement>) =>{
+  const onSubmitSignup = async (event:React.FormEvent<HTMLFormElement>) =>{
     event.preventDefault();
+
+    setValiedateMode(true);
+
+    if(!email || !lastname || !firstname || !password){
+      return undefined;
+    }
 
     try{
       const signUpBody = {
@@ -140,7 +154,8 @@ const SignUpModal: React.FC<IProps> = ({ closeModal }) => {
         ).toISOString(),
       };
       
-      await signupAPI(signUpBody);
+      const {data} = await signupAPI(signUpBody);
+      dispatch(userActions.setLoggedUser(data));
     }
     catch(e){
       console.log(e);
@@ -158,6 +173,9 @@ const SignUpModal: React.FC<IProps> = ({ closeModal }) => {
           name="email" // 브라우저 상에서 email 저장
           value={email}
           onChange={onChangeEmail}
+          useValidation
+          isValid={!!email}
+          errorMessage="이메일이 필요합니다"
         />
       </div>
       <div className="input-wrapper">
@@ -166,6 +184,9 @@ const SignUpModal: React.FC<IProps> = ({ closeModal }) => {
           icon={<PersonIcon />}
           value={lastname}
           onChange={onChangeLastname}
+          useValidation
+          isValid={!!lastname}
+          errorMessage="이름을 입력하세요."
         />
       </div>
       <div className="input-wrapper">
@@ -174,6 +195,9 @@ const SignUpModal: React.FC<IProps> = ({ closeModal }) => {
           icon={<PersonIcon />}
           value={firstname}
           onChange={onChangeFirstName}
+          useValidation
+          isValid={!!firstname}
+          errorMessage="성을 입력하세요"
         />
       </div>
       <div className="input-wrapper sign-up-password-input-wrapper">
@@ -189,6 +213,9 @@ const SignUpModal: React.FC<IProps> = ({ closeModal }) => {
           }
           value={password}
           onChange={onChangePassworkd}
+          useValidation
+          isValid={!!password}
+          errorMessage="비밀번호를 입력하세요"
         />
       </div>
       <p className="sign-up-birthdat-label">생일</p>

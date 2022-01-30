@@ -9,15 +9,21 @@
     "start": "next start"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.7.1",
     "@types/jsonwebtoken": "^8.5.8",
+    "@types/react-redux": "^7.1.22",
     "axios": "^0.25.0",
     "babel-plugin-inline-react-svg": "^2.0.1",
     "babel-plugin-styled-components": "^2.0.2",
     "bcryptjs": "^2.4.3",
     "jsonwebtoken": "^8.5.1",
     "next": "^12.0.8",
+    "next-redux-wrapper": "^7.0.5",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-redux": "^7.2.6",
+    "redux": "^4.1.2",
+    "redux-devtools-extension": "^2.13.9",
     "styled-components": "^5.3.3",
     "styled-reset": "^4.3.4"
   },

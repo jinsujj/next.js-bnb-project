@@ -71,13 +71,12 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         // userId Set
         const hashedPassword = bcrypt.hashSync(password, 8);
         const users = Data.user.getList();
-        let userId;
+        let userId:number;
         if (users.length == 0) {
             userId = 1;
         } else {
             userId = users[users.length - 1].id + 1;
         }
-
 
         // New user Save 
         const newUser: StoredUserType = {
@@ -85,12 +84,11 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
             email,
             firstname,
             lastname,
-            passsword: hashedPassword,
+            password: hashedPassword,
             birthday,
             profileImage: "/static/image/user/default_user_profile_image.jpg",
         };
         Data.user.write([...users, newUser]);
-
 
         // Cookie Expire Time Set
         var expires = new Date();
@@ -104,11 +102,11 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         
         // StoredUserType 의 password 속성을 partial 로 만든 타입을 만듭니다 
         // 타입 에러 없이 delete 속성을 사용하기 위해
-        const newUserWithoutPassword: Partial<Pick<StoredUserType,"passsword">> = newUser;
+        const newUserWithoutPassword: Partial<Pick<StoredUserType,"password">> = newUser;
 
-        delete newUserWithoutPassword.passsword;
+        delete newUserWithoutPassword.password;
         res.statusCode = 200;
-        return res.end(newUser);
+        return res.end(JSON.stringify(newUser));
 
     }
     res.statusCode = 405;
