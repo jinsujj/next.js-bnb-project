@@ -234,7 +234,13 @@ const SignUpModal: React.FC<IProps> = ({ closeModal }) => {
         dispatch(userActions.setLoggedUser(data));
         console.log(data);
       } catch (e) {
-        console.log(e);
+        if(e instanceof Error || e === "string"){
+          var a = e.message.toString(); 
+          if(a.includes("409")){
+            alert("해당 이메일이 존재합니다");
+          }
+          console.log(e.message);
+        }
       }
     }
   };
