@@ -17,6 +17,7 @@ import { useSelector } from "../../store";
 import { commonAction } from "../../store/common";
 import useValidateMode from "../../hooks/useValidateMode";
 import PasswordWarning from "./PasswordWarning";
+import { authAction } from "../../store/auth";
 
 const Container = styled.form`
   width: 568px;
@@ -100,6 +101,12 @@ const SignUpModal: React.FC<IProps> = ({ closeModal }) => {
 
   const dispatch = useDispatch();
   const { setValiedateMode } = useValidateMode();
+
+
+  // 로그인 모달로 변경하기
+  const changeToLoginModal = () => {
+    dispatch(authAction.setAuthMode("login"));
+  }
 
   // 이메일 주소 변경 시
   const onChangeEmail = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -350,7 +357,7 @@ const SignUpModal: React.FC<IProps> = ({ closeModal }) => {
         이미 에어비엔비 계정이 있나요?
         <span className="sign-up-modal-set-login"
               role="presentation"  
-              onClick={() =>{}}
+              onClick={changeToLoginModal}
         >
           로그인
         </span>
