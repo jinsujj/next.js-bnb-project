@@ -97,7 +97,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
         const token = jwt.sign(String(newUser.id), process.env.JWT_SECRET);
         res.setHeader("Set-Cookie",
-            `access_token=${token}; path=/; expires=${expires.toUTCString()})`);
+            `access_token=${token}; path=/; expires=${expires.toUTCString()}); httponly`);
 
         
         // StoredUserType 의 password 속성을 partial 로 만든 타입을 만듭니다 
