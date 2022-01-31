@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import CloseXIcon from "../../public/static/svg/modal/modal_colose_x_icon.svg";
 import MailIcon from "../../public/static/svg/auth/mail.svg";
@@ -11,6 +11,7 @@ import { useDispatch } from "react-redux";
 import { authAction } from "../../store/auth";
 import { loginAPI } from "../../lib/api/auth";
 import useValidateMode from "../../hooks/useValidateMode";
+import { userActions } from "../../store/user";
 
 const Conatiner = styled.form`
   width: 568px;
@@ -75,6 +76,13 @@ const LoginModal: React.FC<IProps> = ({ closeModal }) => {
     dispatch(authAction.setAuthMode("signup"));
   }
 
+
+  useEffect(() => {
+    return () => {
+      setValiedateMode(false);
+    }
+  },[]);
+
   // 로그인 클릭시
   const onSubmitLogin = async (event: React.FormEvent<HTMLFormElement>) =>{
     event.preventDefault();
@@ -88,6 +96,7 @@ const LoginModal: React.FC<IProps> = ({ closeModal }) => {
       const loginBody = { email, password};
       try{
         const {data} = await loginAPI(loginBody);
+        dispatch(userActions.setLoggedUser(data));
         console.log(data);
       }
       catch(e){

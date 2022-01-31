@@ -25,5 +25,5 @@ export const loginAPI = (body: {email:string, password: string}) =>{
 }
 
 
-    
-
+// 쿠키의 access_token 의 유저정보 받아오는 api
+export const meAPI = () => axios.get<UserType>("/api/auth/me");

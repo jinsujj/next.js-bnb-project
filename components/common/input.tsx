@@ -77,10 +77,6 @@ const Input: React.FC<IProps> = ({
   ...props
 }) => {
   const validateMode = useSelector((state) => state.common.validateMode);
-  console.log(errorMessage);
-  console.log(isValid);
-  console.log(validateMode);
-  console.log(useValidation);
   return (
     <Container
       iconExist={!!icon}
