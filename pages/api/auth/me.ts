@@ -13,7 +13,6 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
             }
 
             const userId = jwt.verify(accessToken, process.env.JWT_SECRET!);
-            console.log(userId);
 
             const user = Data.user.find({id:Number(userId)});
             if(!user){

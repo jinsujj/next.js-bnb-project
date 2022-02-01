@@ -241,7 +241,6 @@ const SignUpModal: React.FC<IProps> = ({ closeModal }) => {
         };
         const { data } = await signupAPI(signUpBody);
         dispatch(userActions.setLoggedUser(data));
-        console.log(data);
       } catch (e) {
         if(e instanceof Error || e === "string"){
           var a = e.message.toString(); 
