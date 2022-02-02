@@ -1,12 +1,18 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { secondaryUnitBuildingTypeList } from "../lib/staticData";
+import { BedType } from "../types/room";
 
 type RegisterRoomState = {
     largeBuildingType: string | null;
     buildingType : string | null;
     roomType : string |null;
     isSetupForGuest : boolean | null;
-}
+    maximunGuestCount : number;
+    bedRoomCount: number;
+    bedCount: number;
+    bedList: { id: number, beds: {type: BedType, count: number}[]}[];
+    publicBedList: {type:BedType; count; number}[];
+};
 
 //초기상태
 const initialState : RegisterRoomState = {
@@ -18,6 +24,16 @@ const initialState : RegisterRoomState = {
     roomType: null,
     // 게스트만을 위해 만들어진 숙소인가
     isSetupForGuest: null,
+    // 최대 숙박 인원
+    maximunGuestCount:1,
+    // 침실 개수
+    bedRoomCount: 0,
+    // 침대 개수
+    bedCount: 1,
+    // 침대 유형
+    bedList: [],
+    // 공용공간 침대 유형
+    publicBedList: [],
 };
 
 const registerRoom = createSlice({
