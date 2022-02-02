@@ -65,6 +65,11 @@ const registerRoom = createSlice({
         setIsSetupForGuest(state, action: PayloadAction<boolean>){
             state.isSetupForGuest = action.payload;
             return state;
+        },
+        // 최대 숙박 인원 변경하기
+        setMaximumGuestCount(state, action: PayloadAction<number>){
+            state.maximunGuestCount = action.payload;
+            return state;            
         }
     },
 });
