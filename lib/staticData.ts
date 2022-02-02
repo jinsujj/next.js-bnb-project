@@ -124,3 +124,12 @@ export const boutiquesHotelBuildingTypeList =[
     "레지던스",
     "객잔(중국)"
 ]
+
+
+// 침실 개수
+/*
+    셀렉터의 값은 string 이고 redux 에 저장되는 bedroomCount 값은 number 입니다
+    셀렉터는 클릭 시 '침실 1개'와 같은 형식으로 값을 주게 됩니다.
+    따라서 '침실 1개' 의 텍스트에서 숫자만 얻도록 하겠습니다.
+*/
+export const bedroomCountList = Array.from(Array(16), (_,i) => `침실 ${i}개`);

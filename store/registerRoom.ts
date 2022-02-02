@@ -1,6 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { secondaryUnitBuildingTypeList } from "../lib/staticData";
 import { BedType } from "../types/room";
+import { authAction } from "./auth";
 
 type RegisterRoomState = {
     largeBuildingType: string | null;
@@ -70,7 +71,17 @@ const registerRoom = createSlice({
         setMaximumGuestCount(state, action: PayloadAction<number>){
             state.maximunGuestCount = action.payload;
             return state;            
-        }
+        },
+        // 침실 개수 변경하기
+        setBedRoomCount(state, action:PayloadAction<number>){
+            state.bedRoomCount = action.payload;
+            return state;
+        },
+        // 최대침대 개수 변경하기
+        setBedCount(state, action:PayloadAction<number>){
+            state.bedCount = action.payload;
+            return state;
+        },
     },
 });
 

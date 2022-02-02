@@ -13,3 +13,12 @@ export const cookieStringToObject = (cookieString: string | undefined) => {
     return cookies;
   };
   
+
+  // string 에서 number 만 빼내는 함수
+  export const getNumber = (string:string) =>{
+    const numbers = string.match(/\d/g)?.join("");
+    if(numbers){
+      return Number(numbers);
+    }
+    return null;
+  }
