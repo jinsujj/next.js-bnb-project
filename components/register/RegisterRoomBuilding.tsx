@@ -10,6 +10,7 @@ import { registerRooomAction } from "../../store/registerRoom";
 import palette from "../../styles/palette";
 import RadioGroup from "../common/RadioGroup";
 import Selector from "../common/Selector";
+import RegisterRoomFooter from "./RegisterRoomFooter";
 
 const Container = styled.div`
   padding: 62px 30px 100px;
@@ -103,7 +104,7 @@ const RegisterRoomBuilding: React.FC = () => {
   };
 
   // 게스트용 숙소인지 변경시
-  const onChangeIsSetupForGuest = (value: any) =>{
+  const onChangeIsSetupForGuest = (value: boolean) =>{
       dispatch(registerRooomAction.setIsSetupForGuest(value));
   }
 
@@ -202,6 +203,11 @@ const RegisterRoomBuilding: React.FC = () => {
             options={isSetUpForGuestOptions}
         />
       </div>
+      <RegisterRoomFooter
+        isValid={false}
+        prevHref="/"
+        nextHref="/room/register/bedrooms"
+      />
     </Container>
   );
 };

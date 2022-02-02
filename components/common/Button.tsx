@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import palette from "../../styles/palette";
 
 const Container = styled.button`
@@ -13,14 +13,30 @@ const Container = styled.button`
   font-weight: 800;
   outline: none;
   cursor: pointer;
+  ${(props) => getButtonColor(props.color || "")};
 `;
+
+// 버튼 색상 구하기
+const getButtonColor = (color:string)=>{
+  switch(color){
+    case "dark_cray":
+      return css`
+        background-color: ${palette.dark_cyan};
+      `;  
+    default:
+      return css`
+        background-color: ${palette.bittersweet};
+      `;
+  }
+}
 
 interface IProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
+  color?: "dark_cran";
 }
 
-const Button: React.FC<IProps> = ({ children, ...props }) => {
-  return <Container {...props}>{children}</Container>;
+const Button: React.FC<IProps> = ({ children, color, ...props }) => {
+  return <Container {...props} color={color}>{children}</Container>;
 };
 
 /*
