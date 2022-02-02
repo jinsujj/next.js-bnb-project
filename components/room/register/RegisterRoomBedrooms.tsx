@@ -9,6 +9,7 @@ import palette from "../../../styles/palette";
 import Button from "../../common/Button";
 import Counter from "../../common/Counter";
 import Selector from "../../common/Selector";
+import RegisterRoomBedList from "./RegisterRoomBedList";
 import RegisterRoomBedType from "./RegisterRoomBedTypes";
 
 const Conatiner = styled.div`
@@ -138,11 +139,7 @@ const RegisterRoomBedrooms: React.FC = () => {
         게스트가 잘 파악할 수 있습니다.
       </p>
       <div className="register-room-bed-type-list-wrapper">
-      <ul className="register-room-bed-type-list-wrapper">
-          {bedList.map((bedroom) => (
-            <RegisterRoomBedType bedroom={bedroom}/>
-          ))}
-      </ul>
+      <RegisterRoomBedList/>
       </div>
     </Conatiner>
   );

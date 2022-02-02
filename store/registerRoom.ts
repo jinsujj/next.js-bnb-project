@@ -12,7 +12,7 @@ type RegisterRoomState = {
     bedRoomCount: number;
     bedCount: number;
     bedList: { id: number, beds: { type: BedType, count: number }[] }[];
-    publicBedList: { type: BedType; count; number }[];
+    publicBedList: { type: BedType; count: number }[];
 };
 
 //초기상태
@@ -112,6 +112,27 @@ const registerRoom = createSlice({
             }
             return state;
         },
+        // 공용 공간 침대 유형 개수 변경하기
+        setPublicBedTypeCount(
+            state,
+            action: PayloadAction<{ type: BedType; count: number }>
+          ) {
+            const { type, count } = action.payload;
+      
+            const index = state.publicBedList.findIndex((bed) => bed.type === type);
+            if (index === -1) {
+              //* 타입이 없다면
+              state.publicBedList = [...state.publicBedList, { type, count }];
+              return state;
+            }
+            //* 타입이 존재한다면
+            if (count === 0) {
+              state.publicBedList.splice(index, 1);
+            } else {
+              state.publicBedList[index].count = count;
+            }
+            return state;
+          },
     },
 });
 
