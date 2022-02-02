@@ -76,12 +76,11 @@ const isSetUpForGuestOptions = [
 const disabledlargeBuildingTypeOptions = ["하나를 선택해주세요"];
 
 const RegisterRoomBuilding: React.FC = () => {
-  const largeBuildingType = useSelector(
-    (state) => state.registerRoom.largeBuildingType
-  );
+  const largeBuildingType = useSelector((state) => state.registerRoom.largeBuildingType);
   const buildingType = useSelector((state) => state.registerRoom.buildingType);
   const roomType = useSelector((state) => state.registerRoom.roomType);
   const isSetUpForGuest = useSelector((state) => state.registerRoom.isSetupForGuest);
+  
   const dispatch = useDispatch();
 
   // 큰 범위 건물 유형 변경 시
@@ -107,6 +106,14 @@ const RegisterRoomBuilding: React.FC = () => {
   const onChangeIsSetupForGuest = (value: boolean) =>{
       dispatch(registerRooomAction.setIsSetupForGuest(value));
   }
+
+  // 모든 값이 있는지 확인하기
+  const isValid = useMemo(()=>{
+    if(!largeBuildingType || !buildingType || !roomType || !isSetUpForGuest===null){
+        return false;
+    }
+    return true;
+  },[largeBuildingType, buildingType, roomType, isSetUpForGuest]);
 
   // 선택된 건물 유형 options
   const detailBuildingOptions = useMemo(() => {
@@ -168,10 +175,10 @@ const RegisterRoomBuilding: React.FC = () => {
           disabledOptions={disabledlargeBuildingTypeOptions}
           label="우선 범위를 좁혀볼까요?"
           options={largeBuildingTypeList}
+          isValid={!!largeBuildingType}
           onChange={onChangeLargeBuildingType}
         />
       </div>
-      <h3>2단계</h3>
       <div className="register-room-building-selector-wrapper">
         <Selector
           type="register"
@@ -181,6 +188,7 @@ const RegisterRoomBuilding: React.FC = () => {
           disabledOptions={disabledlargeBuildingTypeOptions}
           label="건물 유형을 선택하세요."
           options={detailBuildingOptions}
+          isValid={!!buildingType}
           onChange={onChangeBuildingType}
         />
       </div>
@@ -201,6 +209,7 @@ const RegisterRoomBuilding: React.FC = () => {
             value={isSetUpForGuest}
             onChange={onChangeIsSetupForGuest}
             options={isSetUpForGuestOptions}
+            isValid={isSetUpForGuest !== null}
         />
       </div>
       <RegisterRoomFooter
