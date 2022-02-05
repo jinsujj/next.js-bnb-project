@@ -1,9 +1,11 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { ReadableStreamBYOBRequest } from "stream/web";
 import { secondaryUnitBuildingTypeList } from "../lib/staticData";
 import { BedType } from "../types/room";
 import { authAction } from "./auth";
 
 type RegisterRoomState = {
+    // 숙소 등록
     largeBuildingType: string | null;
     buildingType: string | null;
     roomType: string | null;
@@ -15,6 +17,16 @@ type RegisterRoomState = {
     publicBedList: { type: BedType; count: number }[];
     bathroomCount : number;
     bathroomType: "private"|"public"| null;
+
+    //위치 등록
+    country: string;
+    city: string;
+    district: string;
+    streetAddress: string;
+    detailAddress: string;
+    postcode: string;
+    latitue: number;
+    longtitude: number;
 };
 
 //초기상태
@@ -41,6 +53,23 @@ const initialState: RegisterRoomState = {
     bathroomCount: 1,
     // 욕실 타입
     bathroomType: null,
+
+    // 국가/지역
+    country: "",
+    // 시/도
+    city: "",
+    // 시/군/구
+    district: "",
+    // 도로명 주소
+    streetAddress: "",
+    // 동 호수
+    detailAddress: "",
+    // 우편 번호
+    postcode: "",
+    // 위도
+    latitue: 0,
+    // 경로
+    longtitude: 0,
 };
 
 const registerRoom = createSlice({
@@ -148,6 +177,46 @@ const registerRoom = createSlice({
           setBathroomType(state, action: PayloadAction<"private"|"public">){
             state.bathroomType = action.payload;
             return state;
+          },
+          // 국가 변경하기
+          setCountry(state, action: PayloadAction<string>){
+              state.country = action.payload;
+              return state;
+          },
+          // 시/도 변경하기
+          setCity(state, action: PayloadAction<string>){
+              state.city = action.payload;
+              return state;
+          },
+          // 시/군/구 변경하기
+          setDistrict(state, action: PayloadAction<string>){
+              state.district = action.payload;
+              return state;
+          },
+          // 도로명 주소 변경하기
+          setStreetAddress(state, action: PayloadAction<string>){
+              state.streetAddress = action.payload;
+              return state;
+          },
+          // 동 호수 변경하기
+          setDetailAddress(state, action:PayloadAction<string>){
+              state.detailAddress = action.payload;
+              return state;
+          },
+          // 우편 번호 변경하기
+          setPostCode(state, action:PayloadAction<string>){
+              state.postcode = action.payload;
+              return state;
+          },
+          // 위도 변경하기
+          setLatitude(state, action: PayloadAction<number>){
+              state.latitue = action.payload;
+              return state;
+          },
+          // 경도 변경하기
+          setLongtitude(state, action: PayloadAction<number>){
+              state.longtitude = action.payload;
+              return state;
           }
     },
 });

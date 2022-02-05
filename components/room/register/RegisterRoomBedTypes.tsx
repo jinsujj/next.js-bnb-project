@@ -1,4 +1,3 @@
-import { opendir } from "fs";
 import React, { useMemo, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
@@ -107,7 +106,8 @@ const RegisterRoomBedType: React.FC<IProps> = ({ bedroom }) => {
             {bedsText}
           </p>
         </div>
-        <Button onClick={toggleOpened} styleType="register" color="white">
+        <Button onClick={toggleOpened} width="161px"
+          color='gray_c4'>
           {opened && "완료"}
           {!opened &&
             (totalBedsCount === 0 ? "침대 추가하기" : "침대 수정하기")}

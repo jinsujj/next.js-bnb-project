@@ -5,7 +5,7 @@ import MailIcon from "../../public/static/svg/auth/mail.svg";
 import OpenedEyeIcon from "../../public/static/svg/auth/opened_eye.svg";
 import ClosedEyeicon from "../../public/static/svg/auth/closed_eye.svg";
 import palette from "../../styles/palette";
-import Input from "../common/input";
+import Input from "../common/Input";
 import Button from "../common/Button";
 import { useDispatch } from "react-redux";
 import { authAction } from "../../store/auth";

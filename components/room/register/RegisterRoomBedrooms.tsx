@@ -1,3 +1,4 @@
+import { NextPage } from "next";
 import React from "react";
 import { useDispatch } from "react-redux";
 import styled from "styled-components";
@@ -78,7 +79,7 @@ const Conatiner = styled.div`
   }
 `;
 
-const RegisterRoomBedrooms: React.FC = () => {
+const RegisterRoomBedrooms: NextPage = () => {
   const maximumGuestCount = useSelector(
     (state) => state.registerRoom.maximunGuestCount
   );
