@@ -99,7 +99,7 @@ const getButtonColor = (color: string, colorReverse: boolean) => {
 
 interface IProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
-  color?: "dark_cran" | "white" | "gray_c4";
+  color?: "dark_cran" | "white" | "gray_c4"| "bittersweet";
   width?: string;
   colorReverse?: boolean;
   icon?: JSX.Element;

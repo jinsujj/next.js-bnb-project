@@ -73,7 +73,7 @@ const Container = styled.form`
     padding-bottom: 16px;
     border-bottom: 1px solid ${palette.gray_eb};
   }
-  .sign-up-modal-set-login{
+  .sign-up-modal-set-login {
     color: ${palette.dark_cyan};
     margin-left: 8px;
     cursor: pointer;
@@ -94,7 +94,7 @@ const disabledMonths = ["월"];
 const disabledDays = ["일"];
 
 // 선택 할 수 없는 년 option
-const disabledYears =["년"];
+const disabledYears = ["년"];
 
 const SignUpModal: React.FC<IProps> = ({ closeModal }) => {
   const [email, setEmail] = useState("");
@@ -111,11 +111,10 @@ const SignUpModal: React.FC<IProps> = ({ closeModal }) => {
   const dispatch = useDispatch();
   const { setValiedateMode } = useValidateMode();
 
-
   // 로그인 모달로 변경하기
   const changeToLoginModal = () => {
     dispatch(authAction.setAuthMode("login"));
-  }
+  };
 
   // 이메일 주소 변경 시
   const onChangeEmail = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -242,9 +241,9 @@ const SignUpModal: React.FC<IProps> = ({ closeModal }) => {
         const { data } = await signupAPI(signUpBody);
         dispatch(userActions.setLoggedUser(data));
       } catch (e) {
-        if(e instanceof Error || e === "string"){
-          var a = e.message.toString(); 
-          if(a.includes("409")){
+        if (e instanceof Error || e === "string") {
+          var a = e.message.toString();
+          if (a.includes("409")) {
             alert("해당 이메일이 존재합니다");
           }
           console.log(e.message);
@@ -365,13 +364,16 @@ const SignUpModal: React.FC<IProps> = ({ closeModal }) => {
         </div>
       </div>
       <div className="sign-up-modal-submit-button-wrapper">
-        <Button type="submit">가입하기</Button>
+        <Button type="submit" color="bittersweet">
+          가입하기
+        </Button>
       </div>
       <p>
         이미 에어비엔비 계정이 있나요?
-        <span className="sign-up-modal-set-login"
-              role="presentation"  
-              onClick={changeToLoginModal}
+        <span
+          className="sign-up-modal-set-login"
+          role="presentation"
+          onClick={changeToLoginModal}
         >
           로그인
         </span>
