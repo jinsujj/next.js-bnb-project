@@ -4,15 +4,15 @@ import { NextApiRequest, NextApiResponse } from "next";
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
     if (req.method === "GET") {
-        const { latitude, longtitude } = req.query;
+        const { latitude, longitude } = req.query;
         console.log(latitude);
-        console.log(longtitude);
-        if (!latitude || !longtitude) {
+        console.log(longitude);
+        if (!latitude || !longitude) {
             res.statusCode = 400;
             return res.send("위치 정보가 없습니다");
         }
         try {
-            const URL = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longtitude}&language=ko&key=${process.env.NEXT_PUBLIC_GOOGLE_MAP_API_KEY}`;
+            const URL = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&language=ko&key=${process.env.NEXT_PUBLIC_GOOGLE_MAP_API_KEY}`;
             const { data } = await axios.get(URL);
             console.log(data);
             const addressComponent = data.results[0].address_components;

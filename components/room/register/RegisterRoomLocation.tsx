@@ -110,38 +110,45 @@ const RegisterLocation: React.FC = () => {
     dispatch(registerRooomAction.setPostCode(event.target.value));
   };
 
+  const longitude = useSelector((state) => state.registerRoom.longitude);
+
   // 현재 위치 불러오기에 성공했을때
-  const onSuccessGetLocation = async ({coords}: {coords: GeolocationCoordinates}) => {
-      try{
-          const {data: currentLocation} = await getLocationInfoAPI({
-              latitude: coords.latitude,
-              longtitude: coords.longitude,
-          });
-          console.log(currentLocation);
-
-          dispatch(registerRooomAction.setCountry(currentLocation.country));
-          dispatch(registerRooomAction.setCity(currentLocation.city));
-          dispatch(registerRooomAction.setDistrict(currentLocation.district));
-          dispatch(registerRooomAction.setStreetAddress(currentLocation.streetAddress));
-          dispatch(registerRooomAction.setPostCode(currentLocation.postcode));
-          dispatch(registerRooomAction.setLatitude(currentLocation.latitude));
-          dispatch(registerRooomAction.setLongtitude(currentLocation.longtitude));
-
-      }catch(e){
-          console.log(e);
-          alert(e?.message);
-      }
-      setLoading(false);
-  }
+  const onSuccessGetLocation = async ({
+    coords,
+  }: {
+    coords: GeolocationCoordinates;
+  }) => {
+    try {
+      const { data: currentLocation } = await getLocationInfoAPI({
+        latitude: coords.latitude,
+        longitude: coords.longitude,
+      });
+      console.log(coords);
+      dispatch(registerRooomAction.setCountry(currentLocation.country));
+      dispatch(registerRooomAction.setCity(currentLocation.city));
+      dispatch(registerRooomAction.setDistrict(currentLocation.district));
+      dispatch(
+        registerRooomAction.setStreetAddress(currentLocation.streetAddress)
+      );
+      dispatch(registerRooomAction.setPostCode(currentLocation.postcode));
+      dispatch(registerRooomAction.setLatitude(currentLocation.latitude));
+      dispatch(registerRooomAction.setLongitude(currentLocation.longitude));
+    } catch (e) {
+      console.log(e);
+      alert(e?.message);
+    }
+    setLoading(false);
+  };
 
   // 현재 위치 사용 클릭 시
   const onClickGetCurrentLocation = () => {
     setLoading(true);
-      navigator.geolocation.getCurrentPosition(onSuccessGetLocation, (e) => {
-          console.log(e);
-          alert(e?.message);
-      })
-  }
+    navigator.geolocation.getCurrentPosition(onSuccessGetLocation, (e) => {
+      console.log(e);
+      alert(e?.message);
+    });
+    console.log(longitude);
+  };
 
   return (
     <Container>
@@ -177,13 +184,27 @@ const RegisterLocation: React.FC = () => {
         <Input label="시/군/구" value={district} onChange={onChangeDistrict} />
       </div>
       <div className="register-room-location-street-address">
-        <Input label="도로명 주소" value={streetAdddress} onChange={onChangeStreetAddress} />
+        <Input
+          label="도로명 주소"
+          value={streetAdddress}
+          onChange={onChangeStreetAddress}
+        />
       </div>
-      <div className="register-room-location-detail-address">
-        <Input label="동호수(선택 사항)" useValidation={false} />
+      <div
+        className="register-room-location-detail-address"
+        onChange={onChangeDetailAddress}
+      >
+        <Input
+          label="동호수(선택 사항)"
+          value={detailAddress}
+          useValidation={false}
+        />
       </div>
-      <div className="register-room-location-postcode">
-        <Input label="우편번호" />
+      <div
+        className="register-room-location-postcode"
+        onChange={onChangePostcode}
+      >
+        <Input label="우편번호" value={postcode} />
       </div>
       <RegisterRoomFooter
         prevHref="/room/register/bathroom"

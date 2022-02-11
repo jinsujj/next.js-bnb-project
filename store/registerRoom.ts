@@ -1,8 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { ReadableStreamBYOBRequest } from "stream/web";
-import { secondaryUnitBuildingTypeList } from "../lib/staticData";
 import { BedType } from "../types/room";
-import { authAction } from "./auth";
 
 type RegisterRoomState = {
     // 숙소 등록
@@ -15,8 +12,8 @@ type RegisterRoomState = {
     bedCount: number;
     bedList: { id: number, beds: { type: BedType, count: number }[] }[];
     publicBedList: { type: BedType; count: number }[];
-    bathroomCount : number;
-    bathroomType: "private"|"public"| null;
+    bathroomCount: number;
+    bathroomType: "private" | "public" | null;
 
     //위치 등록
     country: string;
@@ -25,8 +22,10 @@ type RegisterRoomState = {
     streetAddress: string;
     detailAddress: string;
     postcode: string;
-    latitue: number;
-    longtitude: number;
+    latitude: number;
+    longitude: number;
+
+    amentities: string[];
 };
 
 //초기상태
@@ -67,9 +66,11 @@ const initialState: RegisterRoomState = {
     // 우편 번호
     postcode: "",
     // 위도
-    latitue: 0,
+    latitude: 0,
     // 경로
-    longtitude: 0,
+    longitude: 0,
+    // 편의시설
+    amentities: [],
 };
 
 const registerRoom = createSlice({
@@ -151,73 +152,72 @@ const registerRoom = createSlice({
         setPublicBedTypeCount(
             state,
             action: PayloadAction<{ type: BedType; count: number }>
-          ) {
+        ) {
             const { type, count } = action.payload;
-      
+
             const index = state.publicBedList.findIndex((bed) => bed.type === type);
             if (index === -1) {
-              //* 타입이 없다면
-              state.publicBedList = [...state.publicBedList, { type, count }];
-              return state;
+                //* 타입이 없다면
+                state.publicBedList = [...state.publicBedList, { type, count }];
+                return state;
             }
             //* 타입이 존재한다면
             if (count === 0) {
-              state.publicBedList.splice(index, 1);
+                state.publicBedList.splice(index, 1);
             } else {
-              state.publicBedList[index].count = count;
+                state.publicBedList[index].count = count;
             }
             return state;
-          },
-          // 욕실 개수 변경하기
-          setBathroomCount(state, action: PayloadAction<number>){
-              state.bathroomCount = action.payload;
-              return state;
-          },
-          // 욕실 유형 변경하기
-          setBathroomType(state, action: PayloadAction<"private"|"public">){
+        },
+        // 욕실 개수 변경하기
+        setBathroomCount(state, action: PayloadAction<number>) {
+            state.bathroomCount = action.payload;
+            return state;
+        },
+        // 욕실 유형 변경하기
+        setBathroomType(state, action: PayloadAction<"private" | "public">) {
             state.bathroomType = action.payload;
             return state;
-          },
-          // 국가 변경하기
-          setCountry(state, action: PayloadAction<string>){
-              state.country = action.payload;
-              return state;
-          },
-          // 시/도 변경하기
-          setCity(state, action: PayloadAction<string>){
-              state.city = action.payload;
-              return state;
-          },
-          // 시/군/구 변경하기
-          setDistrict(state, action: PayloadAction<string>){
-              state.district = action.payload;
-              return state;
-          },
-          // 도로명 주소 변경하기
-          setStreetAddress(state, action: PayloadAction<string>){
-              state.streetAddress = action.payload;
-              return state;
-          },
-          // 동 호수 변경하기
-          setDetailAddress(state, action:PayloadAction<string>){
-              state.detailAddress = action.payload;
-              return state;
-          },
-          // 우편 번호 변경하기
-          setPostCode(state, action:PayloadAction<string>){
-              state.postcode = action.payload;
-              return state;
-          },
-          // 위도 변경하기
-          setLatitude(state, action: PayloadAction<number>){
-              state.latitue = action.payload;
-              return state;
-          },
-          // 경도 변경하기
-          setLongtitude(state, action: PayloadAction<number>){
-              state.longtitude = action.payload;
-              return state;
-          }
+        },
+        // 국가 변경하기
+        setCountry(state, action: PayloadAction<string>) {
+            state.country = action.payload;
+            return state;
+        },
+        // 시/도 변경하기
+        setCity(state, action: PayloadAction<string>) {
+            state.city = action.payload;
+            return state;
+        },
+        // 시/군/구 변경하기
+        setDistrict(state, action: PayloadAction<string>) {
+            state.district = action.payload;
+            return state;
+        },
+        // 도로명 주소 변경하기
+        setStreetAddress(state, action: PayloadAction<string>) {
+            state.streetAddress = action.payload;
+            return state;
+        },
+        // 동 호수 변경하기
+        setDetailAddress(state, action: PayloadAction<string>) {
+            state.detailAddress = action.payload;
+            return state;
+        },
+        // 우편 번호 변경하기
+        setPostCode(state, action: PayloadAction<string>) {
+            state.postcode = action.payload;
+            return state;
+        },
+        // 위도 변경하기
+        setLatitude(state, action: PayloadAction<number>) {
+            state.latitude = action.payload;
+        },
+        // 경도 변경하기
+        setLongitude(state, action: PayloadAction<number>) {
+            console.log(action.payload);
+            state.longitude = action.payload;
+        },
     },
 });
 

@@ -8,16 +8,16 @@ type GetLocationInfoAPIResponse = {
     detailAddress: string;
     postcode: string;
     latitude: number;
-    longtitude: number;
+    longitude: number;
 }
 
 
 // 현재 위치 정보 가져오기 api
 export const getLocationInfoAPI = async ({
-    latitude, longtitude,
+    latitude, longitude,
 }: {
     latitude: number;
-    longtitude: number;
+    longitude: number;
 }) => {
-    return axios.get<GetLocationInfoAPIResponse>(`/api/maps/location?latitude=${latitude}&longtitude=${longtitude}`);
+    return axios.get<GetLocationInfoAPIResponse>(`/api/maps/location?latitude=${latitude}&longitude=${longitude}`);
 };
