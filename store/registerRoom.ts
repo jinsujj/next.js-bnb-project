@@ -215,9 +215,12 @@ const registerRoom = createSlice({
         },
         // 경도 변경하기
         setLongitude(state, action: PayloadAction<number>) {
-            console.log(action.payload);
             state.longitude = action.payload;
         },
+        // 편의시설 변경하기
+        setAmentities(state, action: PayloadAction<string[]>){
+            state.amentities = action.payload;
+        }
     },
 });
 
