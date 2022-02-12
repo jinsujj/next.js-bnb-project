@@ -99,7 +99,10 @@ const LoginModal: React.FC<IProps> = ({ closeModal }) => {
         dispatch(userActions.setLoggedUser(data));
       }
       catch(e){
-        console.log(e);
+        const errorMessage:string = e.message;
+        if(errorMessage.includes("403")){
+          alert("해당 계정이 없거나 비밀번호가 일치하지 않습니다.")
+        }
       }
     }
   }

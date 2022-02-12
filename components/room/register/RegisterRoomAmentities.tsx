@@ -1,6 +1,12 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
+import { amentityList } from "../../../lib/staticData";
+import { useSelector } from "../../../store";
+import { registerRooomAction } from "../../../store/registerRoom";
 import palette from "../../../styles/palette";
+import CheckboxGroup from "../../common/CheckboxGroup";
+import RegisterRoomFooter from "../../register/RegisterRoomFooter";
 
 
 const Container = styled.div`
@@ -24,6 +30,13 @@ const Container = styled.div`
 
 
 const RegisterRoomAmentities: React.FC = () => {
+    const dispatch = useDispatch();
+
+    const amentities = useSelector((state) => state.registerRoom.amentities);
+
+    const onChangeAmentities = (selected: string[]) => {
+        dispatch(registerRooomAction.setAmentities(selected));
+    }
     return (
         <Container>
             <h2>어떤 편의 시설을 제공하시나요?</h2>
@@ -31,6 +44,17 @@ const RegisterRoomAmentities: React.FC = () => {
             <p className="register-room-step-info"> 
                 일반적으로 게스트가 기대하는 편의 시설 목록입니다. 숙소를 등록한 후 언제든 편의 시설을 추가할 수 있어요.
             </p>
+            <div className="register-room-amentities-checkbox-group-wrapper">
+                <CheckboxGroup
+                    value={amentities}
+                    onChange={onChangeAmentities}
+                    options={amentityList}
+                />
+                <RegisterRoomFooter
+                    prevHref="/room/register/location"                
+                    nextHref="room/register/conveniences"
+                />
+            </div>
         </Container>
     )
 }

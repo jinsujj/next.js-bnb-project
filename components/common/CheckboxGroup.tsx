@@ -61,6 +61,19 @@ const Container = styled.div`
         background-color: white;
         cursor: pointer;
     }
+    input[type="checkbox"]:checked + span:before{
+        content: "";
+        width: 18px;
+        height: 18px;
+        display: inline-table;
+        background-color: ${palette.dark_cyan};
+        border:1px solid ${palette.gray_b0};
+        border-radius: 2px;
+        position: absolute;
+        background-image: url("/public/static/svg/common/checkbox/checkbox_mark.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+    }
 `;
 
 interface Iprops {
