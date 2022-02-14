@@ -232,7 +232,7 @@ const registerRoom = createSlice({
             state.conveniences = action.payload;
         },
         // 숙소 사진 변경하기
-        setPh5otos(state, action: PayloadAction<string[]>){
+        setPhotos(state, action: PayloadAction<string[]>){
             state.photos = action.payload;
         }
     },
