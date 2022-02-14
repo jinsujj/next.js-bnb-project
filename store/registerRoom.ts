@@ -28,6 +28,7 @@ type RegisterRoomState = {
     amentities: string[];
     conveniences: string[];
     photos: string[];
+    description: string;
 };
 
 //초기상태
@@ -71,12 +72,15 @@ const initialState: RegisterRoomState = {
     latitude: 0,
     // 경로
     longitude: 0,
+
     // 편의시설
     amentities: [],
     // 편의공간
     conveniences: [],
     // 숙소사진
     photos: [],
+    // 숙소 설명
+    description: "",
 };
 
 const registerRoom = createSlice({
@@ -234,6 +238,10 @@ const registerRoom = createSlice({
         // 숙소 사진 변경하기
         setPhotos(state, action: PayloadAction<string[]>){
             state.photos = action.payload;
+        },
+        // 숙소 설명 변경하기
+        setDescription(state, action: PayloadAction<string>) {
+            state.description = action.payload;
         }
     },
 });
