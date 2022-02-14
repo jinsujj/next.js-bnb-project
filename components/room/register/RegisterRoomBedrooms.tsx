@@ -81,7 +81,7 @@ const Conatiner = styled.div`
 
 const RegisterRoomBedrooms: NextPage = () => {
   const maximumGuestCount = useSelector(
-    (state) => state.registerRoom.maximunGuestCount
+    (state) => state.registerRoom.maximumGuestCount
   );
   const bedroomCount = useSelector((state) => state.registerRoom.bedRoomCount);
   const bedCount = useSelector((state) => state.registerRoom.bedCount);

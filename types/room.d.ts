@@ -14,4 +14,75 @@ export type BedType =
     | "해먹"
     | "물침대";
 
+    type RegisterRoomState = {
+        // 숙소 유형
+        largeBuildingType: string | null;
+        buildingType: string | null;
+        roomType: string | null;
+        isSetupForGuest: boolean | null;
     
+        // 숙소 종류 디테일
+        maximumGuestCount: number;
+        bedRoomCount: number;
+        bedCount: number;
+        bedList: { id: number, beds: { type: BedType, count: number }[] }[];
+        publicBedList: { type: BedType; count: number }[];
+    
+        // 욕실 유형
+        bathroomCount: number;
+        bathroomType: "private" | "public" | null;
+    
+        //위치 등록
+        country: string;
+        city: string;
+        district: string;
+        streetAddress: string;
+        detailAddress: string;
+        postcode: string;
+        latitude: number;
+        longitude: number;
+    
+        // 편의시설
+        amentities: string[];
+        // 공용공간
+        conveniences: string[];
+        
+        photos: string[];
+        description: string;
+        title: string;
+        price: number;
+        startDate: string | null;
+        endDate : string | null;
+    };
+
+    export type StoredRoomType = {
+        id: number;
+        largeBuildingType: string | null;
+        roomType: string | null;
+        isSetupForGuest: boolean | null;
+        maximumGuestCount : number;
+        bedroomCount: number;
+        bedCount: number;
+        bedLit: {id: number; beds: {type: BedType; count: number}[]}[];
+        publicBedList: {type:BedType; count: number}[];
+        bathroomCount: number;
+        bathroomType: "private" | "public";
+        latitude: number;
+        longitude: number;
+        country:string;
+        city: string;
+        district: string;
+        streetAddress: string;
+        detailAddress: string;
+        postcode: string;
+        amentities: string[];
+        conveniences: string[];
+        photos: string[];
+        description: string;
+        title: string;
+        price: string;
+        endDate: Date;
+        createdAt: Date;
+        updatedAt: Date;
+        hostId: number;
+    }

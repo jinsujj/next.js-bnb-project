@@ -109,7 +109,8 @@ const RegisterRoomBuilding: React.FC = () => {
 
   // 모든 값이 있는지 확인하기
   const isValid = useMemo(()=>{
-    if(!largeBuildingType || !buildingType || !roomType || !isSetUpForGuest===null){
+    if(!largeBuildingType || !buildingType || !roomType || isSetUpForGuest === null){
+      console.log(isSetUpForGuest);
         return false;
     }
     return true;

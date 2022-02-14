@@ -70,7 +70,7 @@ const Container = styled.div`
         border:1px solid ${palette.gray_b0};
         border-radius: 2px;
         position: absolute;
-        background-image: url("/public/static/svg/common/checkbox/checkbox_mark.svg");
+        background-image: url("/static/svg/common/checkbox/checkbox_mark.svg");
         background-repeat: no-repeat;
         background-position: center;
     }
