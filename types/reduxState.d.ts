@@ -1,6 +1,10 @@
+import { RoomType } from "./room";
 import { UserType } from "./user";
 
-
+// 숙소 redux state
+export type RoomState = {
+    rooms: RoomType[];
+}
 
 // 유저 redux state
 export type UserStae = UserType & {
