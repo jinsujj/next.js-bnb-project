@@ -1,0 +1,348 @@
+[33mcommit 5ae02a4a89f0777ad5e6d20878e135320a81cce5[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: jinsujj <wlstncjs1234@naver.com>
+Date:   Wed Feb 16 13:32:51 2022 +0900
+
+    숙소 검색 예약날짜 인풋(hooks)
+
+[33mcommit bc0c1b0a1a867c5b3ef92501dafffc16c6225b01[m
+Author: jinsujj <wlstncjs1234@naver.com>
+Date:   Wed Feb 16 12:52:12 2022 +0900
+
+    메인 페이지 만들기(숙소 위치 검색하기)
+
+[33mcommit b286fc5ea4074fd75ea807024743f6a52a32946f[m
+Author: jinsujj <wlstncjs1234@naver.com>
+Date:   Mon Feb 14 19:51:10 2022 +0900
+
+    숙소 등록하기 체크리스트
+
+[33mcommit a767eb199563a82baef7c5177144294bbddedb2f[m
+Author: jinsujj <wlstncjs1234@naver.com>
+Date:   Mon Feb 14 17:05:46 2022 +0900
+
+    숙소 등록하기 11단계(날짜)
+
+[33mcommit 79a02283e0e3cb45911c2cb6ee5ede81081cab0b[m
+Author: jinsujj <wlstncjs1234@naver.com>
+Date:   Mon Feb 14 13:28:31 2022 +0900
+
+    숙소 등록하기 10단계(가격)
+
+[33mcommit 821a19113c76b74f25986e83b6e66715d8366632[m
+Author: jinsujj <wlstncjs1234@naver.com>
+Date:   Mon Feb 14 12:43:34 2022 +0900
+
+    숙소 등록하기 9단계(제목)
+
+[33mcommit fb49ceb4b446145e7b3e8066ab8ccf7f7e474bc2[m
+Author: jinsujj <wlstncjs1234@naver.com>
+Date:   Mon Feb 14 12:30:34 2022 +0900
+
+    숙소 등록하기 8단계(숙소 설명)
+
+[33mcommit 9b1286f166bf1a442ec7db8c4bd4dd94282aa74c[m
+Author: jinsujj <wlstncjs1234@naver.com>
+Date:   Mon Feb 14 11:59:20 2022 +0900
+
+    숙소 사진 업데이트 하기
+
+[33mcommit 50ac4fd50c11ac0e4f0df444fe4b79a86c04cd77[m
+Author: jinsujj <wlstncjs1234@naver.com>
+Date:   Sun Feb 13 23:21:05 2022 +0900
+
+    aws-sdk로 파일 업로드하기
+
+[33mcommit 32334042c3f492412ddaf45310b186b8ff2ef116[m
+Author: jinsujj <wlstncjs1234@naver.com>
+Date:   Sun Feb 13 21:58:09 2022 +0900
+
+    파일 업로드 하기
+
+[33mcommit 93e1c80b2eb6ea0adbda8dff978ab0d9d6d3be75[m
+Author: jinsujj <wlstncjs1234@naver.com>
+Date:   Sun Feb 13 21:30:59 2022 +0900
+
+    숙소 등록하기 7단계
+
+[33mcommit 8e370f81a2be94a23168737a4a69e0649ce54ee2[m
+Author: jinsujj <wlstncjs1234@naver.com>
+Date:   Sun Feb 13 20:57:50 2022 +0900
+
+    숙소 등록하기 6단계
+
+[33mcommit f28c4075ecd2e8d3bd68a628734cb338b499fff8[m
+Author: jinsujj <wlstncjs1234@naver.com>
+Date:   Sat Feb 12 23:07:58 2022 +0900
+
+    숙소 편의 시설에 체크박스 공통 검포넌트 적용하기
+
+[33mcommit 0ed8a62068d2e1c1ff6177646a90bf98d1cb0f17[m
+Author: jinsujj <wlstncjs1234@naver.com>
+Date:   Sat Feb 12 14:54:31 2022 +0900
+
+    체크박스 공통 컴포넌트 만들기
+
+[33mcommit 7c8dacad59a295768be9b78eaf1f5e56328a9a23[m
+Author: jinsujj <wlstncjs1234@naver.com>
+Date:   Sat Feb 12 00:29:40 2022 +0900
+
+    숙소 등록하기 5단계
+
+[33mcommit 852a5480c2c4fe1f47f817c5d39517fc41e40f93[m
+Author: jinsujj <wlstncjs1234@naver.com>
+Date:   Fri Feb 11 23:59:48 2022 +0900
+
+    구글 지도로 숙소 위치 조정하기 + bug fix
+
+[33mcommit d05a076321733b407181ff1b5989f6fdcf944a37[m
+Author: jinsujj <wlstncjs1234@naver.com>
+Date:   Sun Feb 6 10:30:06 2022 +0900
+
+    구글 API 로 주소 불러오기
+
+[33mcommit 6b22990f81feaca1b1c3ff291a5d1db94f194d16[m
+Author: jinsujj <wlstncjs1234@naver.com>
+Date:   Sun Feb 6 00:47:40 2022 +0900
+
+    현재 위치 불러오기
+
+[33mcommit 0e988107d16031e915be0de344557da7e08c202e[m
+Author: jinsujj <wlstncjs1234@naver.com>
+Date:   Sun Feb 6 00:28:39 2022 +0900
+
+    숙소 등록하기 4단계 스타일링
+
+[33mcommit 6e1ce726a6005d35de5ad33a7ea6339afb4d47f8[m
+Author: jinsujj <wlstncjs1234@naver.com>
+Date:   Sat Feb 5 21:44:32 2022 +0900
+
+    공통 컴포넌트 재사용(욕실 개수, 욕실 공용 여부)
+
+[33mcommit 1cfad7f3f08bcbf4096b01cdd7e825acf51869fd[m
+Author: jinsujj <wlstncjs1234@naver.com>
+Date:   Sat Feb 5 16:22:42 2022 +0900
+
+    bug fix 계속하기 버튼 isValid freezing 수정
+
+[33mcommit dfd004c56cae6fe583df4b7185c69edf0776505f[m
+Author: jinsujj <wlstncjs1234@naver.com>
+Date:   Wed Feb 2 22:17:52 2022 +0900
+
+    숙소 등록하기 2단계 밸리데이션
+
+[33mcommit 25553096dc8972187175f1b810577aeaef5337d1[m
+Author: jinsujj <wlstncjs1234@naver.com>
+Date:   Wed Feb 2 22:13:29 2022 +0900
+
+    공용공간 침대 유형 변경하기
+
+[33mcommit 6eb3a4e4f2de26e5c7271786958b18e2f3e6b01d[m
+Author: jinsujj <wlstncjs1234@naver.com>
+Date:   Wed Feb 2 21:22:35 2022 +0900
+
+    침대 유형 변경하기
+
+[33mcommit b79df93ad5f3f9f66fcdd01b843bdc53437e3bb9[m
+Author: jinsujj <wlstncjs1234@naver.com>
+Date:   Wed Feb 2 11:49:35 2022 +0900
+
+    공통 컴포넌트를 재사용하기 (침실 개수, 침대 개수)
+
+[33mcommit 606b1e704fb7c46eff24b26c235d8b16d458d869[m
+Author: jinsujj <wlstncjs1234@naver.com>
+Date:   Wed Feb 2 11:31:33 2022 +0900
+
+    카운터 공통 컴포넌트 만들기
+
+[33mcommit e2437b3e6ca40afe5bee77baca418c16ac8f4b7a[m
+Author: jinsujj <wlstncjs1234@naver.com>
+Date:   Wed Feb 2 10:59:25 2022 +0900
+
+    숙소 등록하기 2단계 리덕스 설정하기
+
+[33mcommit 970c413f03f1d491caaaa47a6e90a75a8ca05c7d[m
+Author: jinsujj <wlstncjs1234@naver.com>
+Date:   Wed Feb 2 10:34:24 2022 +0900
+
+    숙소 등록하기 밸리데이션
+
+[33mcommit 2df38c8de13b6f660ebe9751bd636b1e1ef55436[m
+Author: jinsujj <wlstncjs1234@naver.com>
+Date:   Wed Feb 2 10:17:18 2022 +0900
+
+    숙소 등록하기 공통 푸터
+
+[33mcommit eb772d0106c7100b6e505edbe64344e7722304b0[m
+Author: jinsujj <wlstncjs1234@naver.com>
+Date:   Tue Feb 1 20:25:34 2022 +0900
+
+    숙소 유형 라디오 컴포넌트
+
+[33mcommit 24ae4b783e1ac6d23ffbf2b7ee119d44ac2988cb[m
+Author: jinsujj <wlstncjs1234@naver.com>
+Date:   Mon Jan 31 22:31:28 2022 +0900
+
+    숙소 등록하기 리덕스 설정 & 건물 유형 셀렉터 지정
+
+[33mcommit a6d3ffb60d55bde0c8a1921d3519e0e5a535c335[m
+Author: jinsujj <wlstncjs1234@naver.com>
+Date:   Mon Jan 31 16:42:11 2022 +0900
+
+    컴포넌트 최적화
+
+[33mcommit b27da7af589d5dae1dbf3a96d6d767386fcdc701[m
+Author: jinsujj <wlstncjs1234@naver.com>
+Date:   Mon Jan 31 15:50:40 2022 +0900
+
+    로그아웃 하기
+
+[33mcommit 74d15a3217b915c2ab5b11a9c9bc4a4b711fcad3[m
+Author: jinsujj <wlstncjs1234@naver.com>
+Date:   Mon Jan 31 15:33:24 2022 +0900
+
+    유저 메뉴 만들기
+
+[33mcommit 3adfdae32cafbc27e182e317883c82ff855abfe7[m
+Author: jinsujj <wlstncjs1234@naver.com>
+Date:   Mon Jan 31 12:40:21 2022 +0900
+
+    로그인 유지하기
+
+[33mcommit 13b76524a2f6abddcc93ea025bfb66c879f1cdc7[m
+Author: jinsujj <wlstncjs1234@naver.com>
+Date:   Sun Jan 30 21:09:28 2022 +0900
+
+    로그인 밸리데이션
+
+[33mcommit 54a52610ac1056b247ee380fc22eeedd7645e8af[m
+Author: jinsujj <wlstncjs1234@naver.com>
+Date:   Sun Jan 30 21:01:17 2022 +0900
+
+    로그인 api 만들기
+
+[33mcommit dcddcc58832d7b4a7ad0625cdf0d1a3ecb1f5f2e[m
+Merge: 34efca4 02618f3
+Author: jinsujj <wlstncjs1234@naver.com>
+Date:   Sun Jan 30 15:30:07 2022 +0900
+
+    Merge branch 'main' of https://github.com/jinsujj/next.js-bnb-project into main
+
+[33mcommit 34efca4f381f82d0ce2f69063c64663aa34630dc[m
+Author: jinsujj <wlstncjs1234@naver.com>
+Date:   Sun Jan 30 15:18:14 2022 +0900
+
+    로그인 모달 만들기
+
+[33mcommit dff3b5ca9f2ed03176bf532dcbeb5679b90f2c7a[m
+Author: jinsujj <wlstncjs1234@naver.com>
+Date:   Sun Jan 30 14:52:24 2022 +0900
+
+    유저 로그인 뷰 만들기
+
+[33mcommit f0b63fd9531525992ecc5e9fac7675c5e05a0ed2[m
+Author: jinsujj <wlstncjs1234@naver.com>
+Date:   Sun Jan 30 14:20:30 2022 +0900
+
+    회원가입 셀렉터 밸리데이션
+
+[33mcommit 02618f3f61dc0b16dc8e3f16605e46307e6bc7e0[m
+Author: jinsujj <wlstncjs1234@naver.com>
+Date:   Sun Jan 30 15:18:14 2022 +0900
+
+    로그인 모달 만들기
+
+[33mcommit d3f3526e01302dd1f4ebeb1ea3ba55341133a446[m
+Author: jinsujj <wlstncjs1234@naver.com>
+Date:   Sun Jan 30 14:52:24 2022 +0900
+
+    유저 로그인 뷰 만들기
+
+[33mcommit db86bd1280cb82ff0d75c6e5d1999cb8290097e0[m
+Author: jinsujj <wlstncjs1234@naver.com>
+Date:   Sun Jan 30 14:20:30 2022 +0900
+
+    유저 로그인 뷰 만들기
+
+[33mcommit 28bd222a3e828e4a4855b0ec82c9349e74ef486d[m
+Author: jinsujj <wlstncjs1234@naver.com>
+Date:   Sun Jan 30 13:05:34 2022 +0900
+
+    회원가입 비밀번호 밸리데이션 with PasswodWarning Component
+
+[33mcommit eceef44e6dec0c4b7294e7eb2a6e70f312399c7e[m
+Author: jinsujj <wlstncjs1234@naver.com>
+Date:   Sun Jan 30 12:40:13 2022 +0900
+
+    회원가입 밸리데이션 + useValidateMode Hooks
+
+[33mcommit 4e888723f9cc4920440a9bf309738008491b5412[m
+Author: jinsujj <wlstncjs1234@naver.com>
+Date:   Sat Jan 29 16:34:19 2022 +0900
+
+    회원가입시 비밀번호 생략해 저장
+
+[33mcommit 8ce7d13aa37567c4deb45e26d2fcd04c35d8cefd[m
+Author: jinsujj <wlstncjs1234@naver.com>
+Date:   Sat Jan 29 12:09:27 2022 +0900
+
+    회원가입 및 단방향 암호화
+
+[33mcommit 0170c3a3fdae48a56444e70aa8d53b9b66e3555e[m
+Author: jinsujj <wlstncjs1234@naver.com>
+Date:   Wed Jan 26 16:27:19 2022 +0900
+
+    회원가입-input
+
+[33mcommit 2be22399944a8efefd6ebb7653763375b7fac952[m
+Author: jinsujj <wlstncjs1234@naver.com>
+Date:   Wed Jan 26 15:21:43 2022 +0900
+
+    modal popup with hook
+
+[33mcommit b0b893fe73ec1e7f644afdf5b33c448b82caa5cc[m
+Author: jinsujj <wlstncjs1234@naver.com>
+Date:   Wed Jan 26 15:03:16 2022 +0900
+
+    modal popup with react-portal
+
+[33mcommit ba7c30ba61d92be258d6e0c351b6c86bb7922a5b[m
+Author: jinsujj <wlstncjs1234@naver.com>
+Date:   Wed Jan 26 14:29:08 2022 +0900
+
+    Header
+
+[33mcommit 78f474244c395258a38d4097d55e9e601813bab9[m
+Author: jinsujj <wlstncjs1234@naver.com>
+Date:   Wed Jan 26 13:58:28 2022 +0900
+
+    style setting end
+
+[33mcommit d80921b146ebd7d2082fdfefe1f98a7578a072bb[m
+Author: jinsujj <wlstncjs1234@naver.com>
+Date:   Wed Jan 26 13:54:51 2022 +0900
+
+    _app.tsx
+
+[33mcommit b9606d4d373d92959b85785fd3fc1ef87dcd64c9[m
+Author: jinsujj <wlstncjs1234@naver.com>
+Date:   Wed Jan 26 13:52:43 2022 +0900
+
+    design-system
+
+[33mcommit e2b52423720a62ea994ea1afff1829a7bc7ade87[m
+Author: jinsujj <wlstncjs1234@naver.com>
+Date:   Wed Jan 26 13:45:02 2022 +0900
+
+    document setting
+
+[33mcommit 8b6f2ec299dc60514a049da22b608ffcba97b0d3[m
+Author: jinsujj <wlstncjs1234@naver.com>
+Date:   Tue Jan 25 22:29:01 2022 +0900
+
+    init
+
+[33mcommit f5ae9d4ccf2d6492835ecad19f8f3894f8026cdc[m
+Author: jinsujj <wlstncjs1234@naver.com>
+Date:   Tue Jan 25 22:24:11 2022 +0900
+
+    first commit

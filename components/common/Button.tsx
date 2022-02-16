@@ -90,6 +90,11 @@ const getButtonColor = (color: string, colorReverse: boolean) => {
         background-color: white;
         color: ${palette.gray_48};
       `;
+    case "amaranth":
+      return css`
+        background-color: ${palette.amaranth};
+        color:white;
+      `;
     default:
       return css`
         background-color: white;
@@ -118,7 +123,7 @@ const getButtonSize = (size: "small" | "medium") => {
 
 interface IProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
-  color?: "dark_cran" | "white" | "gray_c4" | "bittersweet";
+  color?: "dark_cran" | "white" | "gray_c4" | "bittersweet" |"amaranth";
   width?: string;
   colorReverse?: boolean;
   icon?: JSX.Element;
