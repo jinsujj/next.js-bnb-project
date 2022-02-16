@@ -6,6 +6,7 @@ import auth from "./auth";
 import common from "./common";
 import registerRoom from "./registerRoom";
 import user from "./user";
+import searchRoom from "./searchRoom";
 
 
 const rootRedux = combineReducers({
@@ -13,6 +14,7 @@ const rootRedux = combineReducers({
     common: common.reducer,
     auth: auth.reducer,
     registerRoom: registerRoom.reducer,
+    searcRoom: searchRoom.reducer,
 })
 
 
