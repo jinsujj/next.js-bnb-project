@@ -33,14 +33,14 @@ const Container = styled.div`
         top:40px;
         left:56px;
         border:0;
-        background-image: url("/public/static/svg/common/datePicker/datepicker_left_arrow.svg");
+        background-image: url("/static/svg/common/datePicker/datepicker_left_arrow.svg");
         background-repeat: no-repeat;
     }
     .react-datepicker__navigation--next{
         top:40px;
         right:56px;
         border:0;
-        background-image: url("/public/static/svg/common/datePicker/datepciker_right_arrow.svg");
+        background-image: url("/static/svg/common/datePicker/datepciker_right_arrow.svg");
         background-repeat: no-repeat;
     }
     .react-datepicker__current-month{

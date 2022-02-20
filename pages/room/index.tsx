@@ -1,15 +1,12 @@
 import { NextPage } from "next";
-import { encode } from "punycode";
 import RoomMain from "../../components/room/main/RoomMain";
 import { getRoomListAPI } from "../../lib/api/room";
-import { wrapper } from "../../store";
-import { registerRooomAction } from "../../store/registerRoom";
 import { roomActions } from "../../store/room";
-import { searchRoomAction } from "../../store/searchRoom";
 
 const index: NextPage = () => {
   return <RoomMain />;
 };
+
 
 index.getInitialProps = async ({ store, query }) => {
     const {
@@ -37,6 +34,8 @@ index.getInitialProps = async ({ store, query }) => {
           ? encodeURI(query.location as string)
           : undefined,
       });
+      console.log(data);
+      console.log(query);
       store.dispatch(roomActions.setRooms(data));
     } catch (e) {
       console.log(e);
