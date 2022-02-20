@@ -88,12 +88,19 @@ const SearchRoomGuests: React.FC = () => {
         dispatch(searchRoomAction.setInfantsCount(value));
     }
 
+    // 게스트 인원 수 텍스트
+    const guestText = `게스트 ${adultCount}명 ${
+        !childrenCount ? "" : `, 어린이${childrenCount}명`
+    } ${
+        !infantsCount ? "" : `, 유아${infantsCount}명`
+    }`;
+
     return (
         <Container onClick={() => setPopupOpened(true)}>
             <OutsideClickHandler onOutsideClick={() => setPopupOpened(false)}>
                 <div className="search-room-bar-guests-texts">
                     <p className="search-room-bar-guests-label">인원</p>
-                    <p className="search-room-bar-guests-text">성인 0명</p>
+                    <p className="search-room-bar-guests-text">{guestText}</p>
                 </div>
                 <div className="search-room-bar-button-wrapper">
                     <SearchRoomButton/>
