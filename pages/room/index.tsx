@@ -12,7 +12,7 @@ interface IProps {
 }
 
 
-const index:React.FC<IProps> = ({rooms}) => {
+const index:NextPage<IProps> = ({rooms}) => {
   const dispatch = useDispatch();
   dispatch(roomActions.setRooms(rooms));
 
@@ -20,6 +20,7 @@ const index:React.FC<IProps> = ({rooms}) => {
 };
 
 export const getServerSideProps: GetServerSideProps = async (context : GetServerSidePropsContext) => {
+
   const {
     checkInDate,
     checkOutDate,
