@@ -34,8 +34,6 @@ index.getInitialProps = async ({ store, query }) => {
           ? encodeURI(query.location as string)
           : undefined,
       });
-      console.log(data);
-      console.log(query);
       store.dispatch(roomActions.setRooms(data));
     } catch (e) {
       console.log(e);

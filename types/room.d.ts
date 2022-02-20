@@ -83,6 +83,7 @@ export type BedType =
         description: string;
         title: string;
         price: string;
+        startDate: Date;
         endDate: Date;
         createdAt: Date;
         updatedAt: Date;
