@@ -62,7 +62,6 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         })
         // 개수 자르기 start ,end 
         const limitedRooms = fiteredRooms.splice( 0 + (Number(page) -1) * Number(limit), Number(limit));
-
         // host 정보 넣기
         const roomsWithhost = await Promise.all(limitedRooms.map((room) => {
             const host = Data.user.find({ id: room.hostId });

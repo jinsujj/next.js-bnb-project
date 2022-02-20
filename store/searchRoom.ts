@@ -1,6 +1,4 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { Payload } from "aws-sdk/clients/iotdata";
-import { access } from "fs";
 import { SearchRoomState } from "../types/reduxState";
 
 
