@@ -1,6 +1,7 @@
 import { GetServerSideProps, GetServerSidePropsContext, NextPage } from "next";
 import React from "react";
 import { useDispatch } from "react-redux";
+import RoomDetail from "../../components/room/detail/RoomDetail";
 import { getRoomAPI } from "../../lib/api/room";
 import { roomActions } from "../../store/room";
 import { RoomType } from "../../types/room";
@@ -13,9 +14,11 @@ interface IProps {
 const roomDetail: NextPage<IProps> = ({detailRoom}) =>{
     const dispatch = useDispatch();
     dispatch(roomActions.setDetailRoom(detailRoom));
-    
-    return <div/>;
+
+    return <RoomDetail/>;
 };
+
+export default roomDetail;
 
 
 export const getServerSideProps :GetServerSideProps = async (context: GetServerSidePropsContext) =>{
