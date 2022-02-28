@@ -6,6 +6,7 @@ import RoomDetailPhotos from "./RoomDetailPhotos";
 import isEmpty from "lodash/isEmpty";
 import BedIcon from "../../../public/static/svg/room/detail/bed.svg";
 import RoomAmentityIcon from "./RoomAmentityIcon";
+import RoomDetailReservation from "./RoomDetailReservation";
 
 const Container = styled.div`
   width: 1120px;
@@ -176,7 +177,7 @@ const RoomDetail: React.FC = () => {
             </>
           )}
         </div>
-        {/* <RoomDetailReservation /> */}
+        <RoomDetailReservation /> 
       </section>
     </Container>
   );
