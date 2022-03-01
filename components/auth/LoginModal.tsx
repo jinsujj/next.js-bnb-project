@@ -127,7 +127,7 @@ const LoginModal: React.FC<IProps> = ({ closeModal }) => {
           placeholder="비밀번호 설정하기"
           type={isPasswordHided ? "password" : "text"}
           icon={isPasswordHided ? (
-            <CloseXIcon onClick={toggleHidePassword}/>
+            <ClosedEyeicon onClick={toggleHidePassword}/>
           ):(
             <OpenedEyeIcon onClick={toggleHidePassword}/>
           )}
