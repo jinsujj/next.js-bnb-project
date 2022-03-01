@@ -3,7 +3,7 @@ import { StoredReservation } from "../../types/reservation";
 
 // 예약 리스트 데이터 불러오기
 const getList = () => {
-    const reservationsBuffer = readFileSync("date/reservation.json");
+    const reservationsBuffer = readFileSync("data/reservation.json");
     const reservationString = reservationsBuffer.toString();
 
     if(!reservationString){
