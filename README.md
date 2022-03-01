@@ -8,4 +8,8 @@ sudo apt install curl -y
 sudo apt-get install nodejs
 # node -v
 # npm -v
+
+JavaScript heap out of memory
+
+
 ```
