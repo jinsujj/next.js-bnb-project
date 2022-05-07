@@ -35,10 +35,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
                         Key: `${originalFileName}__${uuidv4()}.${fileExtension}`,
                         ACL: "public-read",
                         Body: stream,
-                    })
-                        .promise()
-                        .then((res) => resolve(res.Location))
-                        .catch((e) => rejects(e));
+                    }).promise().then((res) => resolve(res.Location)).catch((e) => rejects(e));
                 });
             });
             res.statusCode = 201;

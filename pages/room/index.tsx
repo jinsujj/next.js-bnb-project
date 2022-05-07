@@ -31,6 +31,9 @@ export const getServerSideProps: GetServerSideProps = async (context : GetServer
     limit,
     page = "1",
   } = context.query;
+
+  console.log(context.query);
+
   try {
     const { data: rooms} = await getRoomListAPI({
       checkInDate,
@@ -46,7 +49,7 @@ export const getServerSideProps: GetServerSideProps = async (context : GetServer
         ? encodeURI(context.query.location as string)
         : undefined,
     });
-
+    console.log(rooms);
     return {
       props: {
         rooms,

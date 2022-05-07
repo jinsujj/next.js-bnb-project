@@ -7,7 +7,6 @@ import Button from "../../common/Button";
 import { useSelector } from "../../../store";
 import { useRouter } from "next/router";
 import {registerRoomAPI} from "../../../lib/api/room";
-import { route } from "next/dist/server/router";
 
 const Container = styled.footer`
   position: fixed;
